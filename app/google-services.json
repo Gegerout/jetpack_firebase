@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "913360086192",
+    "project_id": "jetpack-app-25d66",
+    "storage_bucket": "jetpack-app-25d66.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:913360086192:android:e795e9047d0219332a4775",
+        "android_client_info": {
+          "package_name": "com.example.firebaseapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYmH98VQ-eInfWGXkxc3F-7HvmI1jMhjY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
