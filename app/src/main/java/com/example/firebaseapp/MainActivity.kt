@@ -10,32 +10,17 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.firebaseapp.ui.theme.FirebaseAppTheme
-import com.google.firebase.Firebase
-import com.google.firebase.database.database
-
-data class Animal(val name: String, val age: Float, val description: String)
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val chipmunk = Animal("Бурундук", .5f, "Милый")
-        val beaver = Animal("Бобер", 2f, "Любит бревно")
-        val minipig = Animal("Минипиг", 2f, "Максим Дубков")
-
-        val database = Firebase.database
-        val myRef = database.getReference("message")
-
-        myRef.child(chipmunk.name).setValue(chipmunk)
-        myRef.child(beaver.name).setValue(beaver)
-        myRef.child(minipig.name).setValue(minipig)
-
         setContent {
             FirebaseAppTheme {
-                Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
-                    Greeting("Android")
-                }
+                val chatViewModel: ChatViewModel = viewModel(factory = ChatViewModel.Factory)
+                chatViewModel.sendMessage("Бобер")
             }
         }
     }
